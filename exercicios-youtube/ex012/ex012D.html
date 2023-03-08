@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Qual sua Nascionalidade</h1>
+    <span>País de origem: </span>
+    <input type="text" name="txtp" id="txtp">
+    <input type="button" value="Cadastrar" onclick="iniciar()">
+    <div id="resultado">
+
+    </div>
+
+    <script>
+        function iniciar() {
+            var txtp = window.document.querySelector('input#txtp')
+            var res = window.document.querySelector('div#resultado')
+            var pais = String(txtp.value.toUpperCase())
+            res.innerHTML = `<p>Seu país de origem é: <strong>${pais}</strong></p>`
+            if (pais == 'BRASIL') {
+                res.innerHTML += '<p><strong>>>>Brasileiro<<<</strong></p>'
+            } else {
+                res.innerHTML += '<p><strong>>>>Estrangeiro<<<</strong></p>'
+            }
+        }
+    </script>
+</body>
+</html>

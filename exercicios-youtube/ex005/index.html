@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+            var nome = window.prompt('Qual é seu nome?')
+            var real = Number(window.prompt('Quando de dinheiro você tem na carteira?'))
+            window.document.write(`Olá, ${nome.toUpperCase()}.<br> Você tem ${real.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} na carteira.`)
+    </script>
+</body>
+</html>

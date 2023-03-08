@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando no DOM</title>
+    <style>
+        body {
+            font: normal 18px Arial;
+            background-color: rgb(79, 79, 223);
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM</h1>
+    <p>Apredendo a usar o <strong>DOM</strong></p>
+    <p>Selecionando elementos do <strong>DOM</strong></p>
+    <div>Clique aqui!</div>
+
+    <script>
+        //Seleção pela Marca(Tag)
+        var p1 = window.document.getElementsByTagName('p')[0]
+        window.document.write(p1.innerText)
+        //A palavra DOM aparreceu sem o Negrito. Isso pq o innerText ignora as formatações. Para se utilizar as formatações use innerHTML.
+        //Dentro do window.alert o innerHTML apresenta as Tags, sendo assim, o innerText é mais apropriado na maioria das vezes.
+        p1.style.color = 'black'
+        p1.style.backgroundColor = 'white'
+        //getElementsByTagName()[]
+        //getElementById()
+        //getElementsByName()[]
+        //getElementsByClassName()[]
+        //querySelector()
+        //querySelectorAll() 
+    </script>
+</body>
+</html>
