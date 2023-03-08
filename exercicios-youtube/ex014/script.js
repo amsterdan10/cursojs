@@ -6,6 +6,7 @@ function carregar() {
     var hora = data.getHours()
     var min = data.getMinutes()
     msg.innerHTML = `<p><strong>Agora são ${hora}:${min}.</strong></p>`
+    
     if (hora < 12) {
         //Bom-dia
         document.body.style.backgroundColor = '#1c8ee4'
