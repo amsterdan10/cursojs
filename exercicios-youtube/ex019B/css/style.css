@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(18, 67, 122);
+    font: normal 16px Arial, sans-serif;
+}
+header {
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+header h1 {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.400);
+}
+section {
+    background-color: white;
+    width: 500px;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.400);
+}
+section p {
+    margin: 20px 0;
+}
+footer {
+    margin-top: 10px;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
