@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de números</title>
+    <style>
+        body {
+            font: normal 16px Arial, sans-serif;
+        }
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gerador de números</h1>
+    <div>
+        <button onclick="iniciar()">Clique em mim</button>
+        <button onclick="limpar()">Limpar</button>
+    </div>
+    <div id="res">
+        <p>Cada vez que você apertar o botão acima, eu penso em um número entre 1 e 100.</p>
+    </div>
+
+    <script>
+        var res = document.querySelector('#res')
+        function iniciar() {
+            let aleatorio = Math.floor(Math.random() * 100 + 1)
+            res.innerHTML += `<p>Acabei de pensar no número <mark>${aleatorio}</mark>!</p>`
+        }
+        function limpar() {
+            res.innerHTML = `<p>Cada vez que você apertar o botão acima, eu penso em um número entre 1 e 100.</p>`
+        }
+
+        /*
+        function gerar() {
+        let min = 1
+        let max = 100
+        let dif = max - min
+        let aleatorio = Math.random() // Essa função gera um valor Real aleatório entre 0 e 1
+        let num = min + Math.trunc(dif * aleatorio)
+    
+         let res = document.querySelector('section#result')
+        res.innerHTML += `<p>Acabei de pensar no número <mark>${num}</mark>!</p>`
+        }
+
+        function limpar() { // Essa é a funcionalidade do outro botão, pra limpar tudo
+        let res = document.querySelector('section#result')
+        res.innerHTML = null // Vai esvaziar a section toda
+        }
+        */
+    </script>
+</body>
+</html>
