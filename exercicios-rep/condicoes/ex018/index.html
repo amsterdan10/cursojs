@@ -5,8 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jogo em JS</title>
+    <style>
+        body {
+            font: normal 16px Arial, sans-serif;
+        }
+        button {
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Tente adivinhar meu número</h1>
+    <div>
+        <button id="btn" onclick="adivinhar()">Tentar adivinhar</button>
+    </div>
+    <div id="res">
+        <p>Já pensei em um valor entre 1 e 100...</p>
+    </div>
+
+    <script>
+        let ale = Math.floor(Math.random() * 100 + 1)
+        
+        function adivinhar() {
+            let ten = Number(prompt('Qual é o seu palpite?'))
+            
+            let res = document.querySelector('#res')
+            if (ten > ale) {
+                res.innerHTML += `<p>Você escolheu ${ten}. Meu número é <strong>MENOR!</strong></p>`
+            } else if (ten < ale) {
+                res.innerHTML += `<p>Você escolheu ${ten}. Meu número é <strong>MAIOR!</strong></p>`
+            } else {
+                res.innerHTML += `<p><strong>PARABÉNS!</strong> Você acertou! Eu tinha sorteado o número ${ten}!</p>`
+                document.querySelector('#btn').style.visibility = 'hidden'
+            }    
+        }
+    </script>
 </body>
 </html>
