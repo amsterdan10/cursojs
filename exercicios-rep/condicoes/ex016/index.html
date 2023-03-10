@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando a idade</title>
+    <style>
+        body {
+            font: normal 16px Arial, sans-serif;
+        }
+        button {
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando a idade</h1>
+    <div>
+        <button onclick="iniciar()">Iniciar</button>
+    </div>
+    <div id="res">
+        <p>Aqui vai aparecer algo...</p>
+    </div>
+    
+    <script>
+        function iniciar() {
+            let nasc = Number(prompt('Em que ano você nasceu?'))
+            let data = new Date()
+            let agora = data.getFullYear()
+            let idade = agora - nasc
+
+            if (nasc > agora) {
+                alert('[ERRO] Você colocou um ano que ainda não chegou.')
+            } else {
+                let res = document.querySelector('#res')
+                res.innerHTML = `<p>Quem nasceu em ${nasc} vai completar <strong>${idade}</strong> anos em 2023.</p>`
+            }
+        }
+    </script>
+</body>
+</html>
