@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JS</title>
+    <style>
+        Body {
+            font: normal 16px Arial, sans-serif;
+        }
+        input {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Média do aluno v2.0</h1>
+    <input type="button" value="Calcular média" onclick="calcular()">
+    <div id="res">
+        <p>O resultado vai aparecer aqui...</p>
+    </div>
+    <script>
+        function calcular() {
+            let nome = prompt('Qual o nome do aluno?')
+            let n1 = Number(prompt(`Qual foi a primeira nota de ${nome}?`))
+            let n2 = Number(prompt(`Além de ${n1}, qual a segunda nota de ${nome}?`))
+            m = (n1 + n2) / 2
+            
+            let msg
+            if (m >= 6) {
+                msg = `<strong style='color:#22dd33;'>Meus parabéns!</strong>`
+            } else {
+                msg = `<strong style='color:red;'>Estude um pouco mais!</strong>`
+            }
+
+            let res = document.querySelector('#res')
+            res.innerHTML = `<p>Calculando a média final de <mark>${nome}</mark>.</p>`
+            res.innerHTML += `<p>As notas obtidas foram <mark>${n1}</mark> e <mark>${n2}</mark>.</p>`
+            res.innerHTML += `<p>A média final será <mark>${m}</mark></p>`
+            res.innerHTML += `<p>A mensagem que temos é: ${msg}</p>`
+        }
+    </script>
+</body>
+</html>
