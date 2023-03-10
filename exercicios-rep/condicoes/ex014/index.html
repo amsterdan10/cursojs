@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interagindo com o sistema</title>
+    <style>
+        body {
+            font: normal 16px Arial, sans-serif;
+        }
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interagindo com o sistema</h1>
+    <div>
+        <button onclick="iniciar()">Clique em mim</button>
+    </div>
+    <div id="res">
+        <p>Aqui vai aparecer algo...</p>
+    </div>
+    <script>
+        function iniciar() {
+            let data = new Date()
+            let res = document.querySelector('#res')
+            res.innerHTML = `<p>O que eu recebi do sistema foi <mark>${data}</mark></p>`
+        }
+    </script>
+</body>
+</html>
