@@ -25,7 +25,9 @@
 
     <script>
         function iniciar() {
-            
+            let meses = new Array('Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez')
+            let semana = new Array('Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab')
+           
             let data = new Date()
             let diaM = data.getDate()
             let mes = data.getMonth()
@@ -34,6 +36,15 @@
             let hora = data.getHours()
             let min = data.getMinutes()
             let seg = data.getSeconds()
+
+            let res = document.querySelector('#res')
+            res.innerHTML = `<p>Dia: <mark>${diaM}</mark></p>`
+            res.innerHTML += `<p>Mês: <mark>${meses[mes]}</mark></p>`
+            res.innerHTML += `<p>Ano: <mark>${ano}</mark></p>`
+            res.innerHTML += `<p>Dia da Semana: <mark>${semana[diaS]}</mark></p>`
+            res.innerHTML += `<p>Horas: <mark>${hora}</mark></p>`
+            res.innerHTML += `<p>Minutos: <mark>${min}</mark></p>`
+            res.innerHTML += `<p>Segundos: <mark>${seg}</mark></p>`
         }
     </script>
 </body>
