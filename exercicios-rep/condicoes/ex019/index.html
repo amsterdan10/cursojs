@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Múltiplas ações</title>
+    <style>
+        body {
+            font: normal 16px Arial, sans-serif;
+        }
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Múltiplas ações</h1>
+    <div>
+        <button onclick="iniciar()">Clique para iniciar</button>
+    </div>
+    <div id="res">
+        <p>Clique no botão para começar.</p>
+    </div>
+
+    <script>
+        function iniciar() {
+            let n1 = Number(prompt('Qual o primeiro número?'))
+            let n2 = Number(prompt('Qual o segundo número?'))
+            let op = Number(prompt(`Você digitou os números ${n1} e ${n2}.\nO que faço com eles?\n[1] Somar\n[2] Subtrair\n[3] Multiplicar\n[4] Dividir`))
+
+            let res = document.querySelector('#res')
+            res.innerHTML = '<p><strong>Calculando...</strong></p>'
+            switch (op) {
+                case 1:
+                    res.innerHTML += `<p>${n1} + ${n2} = <strong>${n1 + n2}</strong></p>`
+                    break
+                case 2:
+                    res.innerHTML += `<p>${n1} - ${n2} = <strong>${n1 - n2}</strong></p>`
+                    break
+                case 3:
+                    res.innerHTML += `<p>${n1} x ${n2} = <strong>${n1 * n2}</strong></p>`
+                    break
+                case 4:
+                    res.innerHTML += `<p>${n1} / ${n2} = <strong>${n1 / n2}</strong></p>`
+                    break
+                default: 
+                    res.innerHTML += `<p>OPÇÃO INVÁLIDA! Você digitou ${n1} e ${n2}, mas não sei o que fazer com eles. </p>`
+            }
+        }
+    </script>
+</body>
+</html>
