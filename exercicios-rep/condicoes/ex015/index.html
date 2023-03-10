@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisando Data e Hora</title>
+    <style>
+        body {
+            font: normal 16px Arial, sans-serif;
+        }
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analisando data e hora do Sistema</h1>
+    <div>
+        <button onclick="iniciar()">Iniciar Análise</button>
+    </div>
+    <div id="res">
+        <p>Aqui vai aparecer algo...</p>
+    </div>
+
+    <script>
+        function iniciar() {
+            
+            let data = new Date()
+            let diaM = data.getDate()
+            let mes = data.getMonth()
+            let ano = data.getFullYear()
+            let diaS = data.getDay()
+            let hora = data.getHours()
+            let min = data.getMinutes()
+            let seg = data.getSeconds()
+        }
+    </script>
+</body>
+</html>
