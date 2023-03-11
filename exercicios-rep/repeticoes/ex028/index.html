@@ -33,5 +33,21 @@
     <section id="saida">
         <p>Preencha os dados acima e aperte o botão.</p>
     </section>
+
+    <script>
+        function fatorial() {
+            let num = Number(document.querySelector('#txtnum').value)
+            let saida = document.querySelector('#saida')
+            saida.innerHTML = `<p><strong>Calculando ${num}!</strong></p>`
+
+            let fat = 1
+            while (num > 1) {
+                saida.innerHTML += `${num} x `
+                fat *= num
+                num--
+            }
+            saida.innerHTML += `1 = <strong>${fat.toLocaleString('pt-br')}</strong>`
+        }
+    </script>
 </body>
 </html>
