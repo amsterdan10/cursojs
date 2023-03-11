@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situaçao do aluno</title>
+    <style>
+        body {
+            font: normal 18px Arial, sans-serif;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+    <button onclick="situacao()">Entrar com as notas</button>
+    <div id="saida">
+        <p>Clique no botão acima para informar as notas do aluno.</p>
+    </div>
+
+    <script>
+        function situacao() {
+            let nome = prompt('Qual é o nome do(a) estudante?')
+            let n1 = Number(prompt(`Primeira nota de ${nome}:`))
+            let n2 = Number(prompt(`Segunda nota de ${nome}:`))
+            med = (n1 + n2) / 2
+
+            let saida = document.querySelector('#saida')
+            saida.innerHTML = `<p><strong>Analisando a situação de ${nome}</strong></p>`
+            saida.innerHTML += `<p>Com as notas ${n1} e ${n2}, a <strong>média é ${med}</strong></p>`
+            if (med < 3) {
+                saida.innerHTML += `<p>Com média abaixo de 3,0 > O(a) estudante está <strong style='background-color:#c11d1d70; color:red;'>REPROVADO(a)!</strong></p>`
+            } else if (med <= 6) {
+                saida.innerHTML += `<p>Com média entre 3,0 e 6,0 > O(a) estudante está em <strong style='background-color:#c19b1d70; color:orange;'>RECUPERAÇÃO!</strong></p>`
+            } else {
+                saida.innerHTML += `<p>Com média acima de 6,0 > O(a) estudante está <strong style='background-color:#1cd51c70; color:green;'>APROVADO(a)</strong></p>`
+            }
+        }    
+    </script>
+</body>
+</html>
