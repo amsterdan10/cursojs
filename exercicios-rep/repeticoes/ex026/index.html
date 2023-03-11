@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem</title>
+    <style>
+        body {
+            font: normal 16px Arial, sans-serif;
+        }
+        input {
+            padding: 2px;
+        }
+        input[type=button] {
+            background-color: green;
+            color: white;
+            font-size: 16px;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contagem "inteligente"</h1>
+    <div>
+        <p>Use qualquer valor nas caixas, simule contagens crescentes e regressivas. Use também valores negativos.</p>
+    </div>
+    <div>
+        <p>
+            Valor inicial:
+            <input type="number" name="txtn1" id="txtn1">
+        </p>
+        <p>
+            Valor final:
+            <input type="number" name="txtn2" id="txtn2">
+        </p>
+        <p>
+            <input type="button" value="Contar" onclick="contar()">
+        </p>
+    </div>
+    <div id="res">
+        <p>Preencha os dados acima e aperte o botão.</p>
+    </div>
+
+    <script>
+        function contar() {
+            let ini = Number(document.querySelector('#txtn1').value)
+            let fin = Number(document.querySelector('#txtn2').value)
+
+            let res = document.querySelector('#res')
+            res.innerHTML = `<p><strong>Contando de ${ini} até ${fin}</strong></p>`
+
+            if (ini < fin) {
+                for (let c = ini; c <= fin; c++) {
+                    res.innerHTML += `\uD83D\uDC49 ${c} `
+                }
+            } else {
+                for (let c = ini; c >= fin; c--) {
+                    res.innerHTML += `\uD83D\uDC49 ${c} `
+                }
+            }
+            res.innerHTML += '\uD83D\uDC49 Fim!'
+        }
+    </script>
+</body>
+</html>
