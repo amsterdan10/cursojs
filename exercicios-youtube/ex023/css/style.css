@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(44, 44, 158);
+    font: normal 18px Arial, sans-serif;
+}
+header {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+section {
+    background-color: white;
+    margin: 0 auto;
+    max-width: 516px;
+    border-radius: 15px;
+    padding: 20px;
+}
+div#entrada {
+    margin-bottom: 20px;
+}
+div input {
+    padding: 4px;
+    font-size: 16px;
+}
+div button {
+    margin-top: 10px;
+    padding: 4px;
+    font-size: 16px;
+}
+footer {
+    margin-top: 10px;
+    padding: 5px;
+    color: white;
+    text-align: center;
+}
