@@ -7,7 +7,8 @@ num[3] = 9
 console.log(num)
 num[7] = 8
 console.log(num)
-num.push(9)
+var oi = 9
+num.push(oi)
 console.log(num)
 console.log(num.length)
 num.sort()
