@@ -9,6 +9,9 @@ body {
     background-color: rgb(44, 44, 158);
     font: normal 18px Arial, sans-serif;
 }
+body p {
+    margin-top: 10px;
+}
 header {
     padding: 20px;
     color: white;
@@ -32,7 +35,7 @@ section {
     width: 150px;
 }
 #saida button {
-    margin-top: 10px;
+    margin-top: 4px;
     padding: 4px;
     font-size: 16px;
 }
