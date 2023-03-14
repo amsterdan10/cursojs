@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Primos</title>
+    <style>
+        body {
+            font: normal 16px Arial, sans-serif;
+            background-color: rgb(45, 45, 147);
+        }
+        header {
+            text-align: center;
+            color: white;
+        }
+        section {
+            margin: 0 auto;
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 500px;
+            /* height: 148px; */
+        }
+        input {
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Descobrindo Números Primos</h1>
+    </header>
+    <section>
+        <div id="entrada">
+            <p>
+                <label for="inum">Digite um número:</label>
+                <input type="number" name="inum" id="inum" placeholder="Digite um número">
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </p>
+        </div>
+        <div id="saida">
+            <p>O resultado aparecerá aqui...</p>
+        </div>
+    </section>
+
+    <script>
+       function verificar() {
+        var num = document.querySelector('#inum')
+        var sai = document.querySelector('#saida')
+        
+        if (num.value == '') {
+            alert('Por favor, digite um número!')
+        } else if (num.value <= 0) {
+            alert('Por favor insira um número válido!')
+        } else if (num.value == 1) {
+            sai.innerHTML = '<p><strong>1</strong> não é considerado primo, pois possui apenas um divisor.</p>'
+        } else {
+            let n = Number(num.value)
+            let div = []
+            for (c = 1; c <= n; c++) {
+                if (n%c == 0) {
+                    div.push(c)
+                }
+            }
+            if (div[1] == n) {
+                sai.innerHTML = `<p><strong>${n}</strong> é primo, pois é divisível apenas por <strong>1</strong> e por <strong>${n}.</strong></p>`
+            }  else {
+                sai.innerHTML = `<p><strong>${n}</strong> não é primo, pois é divisível por <strong>${div.join(', ')}.</strong></p>`
+                // for (pos = 0; pos < div.length - 1; pos++) {
+                //     sai.innerHTML += ` <strong>${div[pos]},</strong>`
+                // }
+                //sai.innerHTML += `<strong> ${n}.</strong>`
+            }
+        }
+        num.value = ''
+        num.focus()
+       }
+    </script>
+</body>
+</html>
